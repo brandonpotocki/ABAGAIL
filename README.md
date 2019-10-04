@@ -1,6 +1,14 @@
 ABAGAIL
 =======
 
+Changes in this Fork
+--------------------
+
+* (2019-10-03) Added `RestartingRandomizedHillClimbing`
+	* Similar to `RandomizedHillClimbing`, but takes an additional `int restartThreshold` parameter.
+	* If more than `restartThreshold` iterations pass without any fitness improvement, a new random state is selected.
+	* [Not guaranteed not to break other things depending on what you are doing... so use with caution!]
+
 [![Build Status](https://travis-ci.org/pushkar/ABAGAIL.svg?branch=master)](https://travis-ci.org/pushkar/ABAGAIL)
 
 The library contains a number of interconnected Java packages that implement machine learning and artificial intelligence algorithms. These are artificial intelligence algorithms implemented for the kind of people that like to implement algorithms themselves.

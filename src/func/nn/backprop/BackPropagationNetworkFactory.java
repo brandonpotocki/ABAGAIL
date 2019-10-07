@@ -7,6 +7,7 @@ import func.nn.activation.DifferentiableActivationFunction;
 import func.nn.activation.HyperbolicTangentSigmoid;
 import func.nn.activation.LinearActivationFunction;
 import func.nn.activation.LogisticSigmoid;
+import func.nn.activation.ReLU;
 
 /**
  * A multi layer perceptron factory
@@ -133,7 +134,7 @@ public class BackPropagationNetworkFactory {
      * @return a multilayer perceptron with nodeCounts.length layers
      */
     public BackPropagationNetwork createClassificationNetwork(int[] nodeCounts) {
-        return createClassificationNetwork(nodeCounts, new HyperbolicTangentSigmoid());
+        return createClassificationNetwork(nodeCounts, new ReLU());
     }
 
 

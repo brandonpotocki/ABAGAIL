@@ -4,7 +4,15 @@ ABAGAIL
 Changes in this Fork
 --------------------
 
-* (2019-10-03) Added `RestartingRandomizedHillClimbing`
+* (2019-10-07) Bugfix to 'Neuron' connections
+	* Added a check to prevent nodes in one layer of a neural network from being able to connect to the bias node in the next layer.
+* (2019-10-07) Added 'ReLU' activation function
+	* NOTE: Defaulted BackPropagationNetworkFactory.createClassificationNetwork() to utilize ReLU activation.
+* (2019-10-07) Added 'Order1CrossOver' crossover function
+	* Used with GeneticAlgorithmProblems.
+	* Maintains permutation integrity when mating two parents.
+	* Uses a random length of data from parent 1 (in order), then fills in the remainder with the unused values in the order they appear in parent 2.
+* (2019-10-03) Added `RestartingRandomizedHillClimbing` algorithm
 	* Similar to `RandomizedHillClimbing`, but takes an additional `int restartThreshold` parameter.
 	* If more than `restartThreshold` iterations pass without any fitness improvement, a new random state is selected.
 	* [Not guaranteed not to break other things depending on what you are doing... so use with caution!]

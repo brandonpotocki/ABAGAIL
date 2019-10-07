@@ -3,6 +3,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import func.nn.backprop.BackPropagationBiasNode;
+
 /**
  * A node in a neural network implementation
  * @author Andrew Guillory gtg008g@mail.gatech.edu
@@ -144,11 +146,13 @@ public class Neuron implements Serializable {
 	 * @param node the node to connect to
 	 */
 	public void connect(Neuron node) {
-		Link link = createLink();
-		link.setInNode(this);
-		link.setOutNode(node);		
-		addOutLink(link);
-		node.addInLink(link);
+        if (!node.getClass().equals(BackPropagationBiasNode.class)) {
+			Link link = createLink();
+			link.setInNode(this);
+			link.setOutNode(node);		
+			addOutLink(link);
+			node.addInLink(link);
+        }
 	}
 	
 	/**

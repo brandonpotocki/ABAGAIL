@@ -4,12 +4,19 @@ ABAGAIL
 Changes in this Fork
 --------------------
 
-* (2019-10-07) Bugfix to 'Neuron' connections
+* (2019-10-11) Added several new test cases, images, and results
+* (2019-10-11) Added `LargestWeightCrossOver` crossover function
+	* Used with `GeneticAlgorithmProblem` with continuous data
+	* Creates a child sample by looking at the absolute value of each parent's respective bits and using the one with largest magnitude.
+* (2019-10-11) Added `AveragedCrossOver` crossover function
+	* Used with `GeneticAlgorithmProblem` with continuous data
+	* Creates a child sample based on averaging the respective bits of data between the two parents
+* (2019-10-07) Bugfix to `Neuron` connections
 	* Added a check to prevent nodes in one layer of a neural network from being able to connect to the bias node in the next layer.
-* (2019-10-07) Added 'ReLU' activation function
-	* NOTE: Defaulted BackPropagationNetworkFactory.createClassificationNetwork() to utilize ReLU activation.
-* (2019-10-07) Added 'Order1CrossOver' crossover function
-	* Used with GeneticAlgorithmProblems.
+* (2019-10-07) Added `ReLU` activation function
+	* NOTE: Defaulted `BackPropagationNetworkFactory.createClassificationNetwork()` to utilize ReLU activation.
+* (2019-10-07) Added `Order1CrossOver` crossover function
+	* Used with `GeneticAlgorithmProblem`.
 	* Maintains permutation integrity when mating two parents.
 	* Uses a random length of data from parent 1 (in order), then fills in the remainder with the unused values in the order they appear in parent 2.
 * (2019-10-03) Added `RestartingRandomizedHillClimbing` algorithm

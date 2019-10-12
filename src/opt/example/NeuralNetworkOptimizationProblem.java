@@ -8,6 +8,8 @@ import opt.HillClimbingProblem;
 import opt.NeighborFunction;
 import opt.ga.ContinuousAddOneMutation;
 import opt.ga.UniformCrossOver;
+import opt.ga.AveragedCrossOver;
+import opt.ga.LargestWeightCrossOver;
 import opt.ga.CrossoverFunction;
 import opt.ga.GeneticAlgorithmProblem;
 import opt.ga.MutationFunction;
@@ -55,6 +57,8 @@ public class NeuralNetworkOptimizationProblem implements HillClimbingProblem, Ge
              NeuralNetwork network, ErrorMeasure measure) {
         eval = new NeuralNetworkEvaluationFunction(network, examples, measure);
         crossover = new UniformCrossOver();
+        //crossover = new AveragedCrossOver();
+        //crossover = new LargestWeightCrossOver();
         neighbor = new ContinuousAddOneNeighbor();
         mutate = new ContinuousAddOneMutation();
         dist = new NeuralNetworkWeightDistribution(network.getLinks().size());
